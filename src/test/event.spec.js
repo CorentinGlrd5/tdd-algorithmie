@@ -10,7 +10,7 @@ describe("The event starts during the day ends during the day", () => {
     end = new Date("2021-03-05T21:00:00");
 
     let event = new Event(start, end);
-    let eventForPay = convertEventToEventForPay(Event, hours);
+    let eventForPay = convertEventToEventForPay(event, hours);
 
     expect(eventForPay.startInDay).toBe(true);
     expect(eventForPay.endInDay).toBe(true);
@@ -21,7 +21,7 @@ describe("The event starts during the day ends during the day", () => {
     end = new Date("2021-03-06T05:00:00");
 
     let event = new Event(start, end);
-    let eventForPay = convertEventToEventForPay(Event, hours);
+    let eventForPay = convertEventToEventForPay(event, hours);
 
     expect(eventForPay.startInDay).toBe(false);
     expect(eventForPay.endInDay).toBe(false);
@@ -32,7 +32,7 @@ describe("The event starts during the day ends during the day", () => {
     end = new Date("2021-03-05T23:30:00");
 
     let event = new Event(start, end);
-    let eventForPay = convertEventToEventForPay(Event, hours);
+    let eventForPay = convertEventToEventForPay(event, hours);
 
     expect(eventForPay.startInDay).toBe(true);
     expect(eventForPay.endInDay).toBe(false);
@@ -43,7 +43,7 @@ describe("The event starts during the day ends during the day", () => {
     end = new Date("2021-03-05T10:30:00");
 
     let event = new Event(start, end);
-    let eventForPay = convertEventToEventForPay(Event, hours);
+    let eventForPay = convertEventToEventForPay(event, hours);
 
     expect(eventForPay.startInDay).toBe(false);
     expect(eventForPay.endInDay).toBe(true);
@@ -54,7 +54,7 @@ describe("The event starts during the day ends during the day", () => {
     end = new Date("2021-03-06T09:10:00");
 
     let event = new Event(start, end);
-    let eventForPay = convertEventToEventForPay(Event, hours);
+    let eventForPay = convertEventToEventForPay(event, hours);
 
     expect(eventForPay.startInDay).toBe(true);
     expect(eventForPay.endInDay).toBe(true);

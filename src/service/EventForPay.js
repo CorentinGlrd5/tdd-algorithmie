@@ -1,7 +1,8 @@
 class EventForPay {
-    constructor({startInDay, endInDay}) {
+    constructor({startInDay, endInDay, isNextDay}) {
         this.startInDay = startInDay
         this.endInDay = endInDay
+        this.isNextDay = isNextDay
     }
 }
 
