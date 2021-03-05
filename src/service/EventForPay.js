@@ -1,7 +1,8 @@
 class EventForPay {
-    constructor() {
-
+    constructor({startInDay, endInDay}) {
+        this.startInDay = startInDay
+        this.endInDay = endInDay
     }
 }
 
-module.export = EventForPay;
+module.exports = EventForPay; 
