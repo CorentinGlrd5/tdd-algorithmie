@@ -14,8 +14,8 @@ function convertEventToEventForPay(date, hours) {
   const startHour = new Date("2021-03-05T06:00:00");
   const endHour = new Date("2021-03-05T22:00:00");
 
-  // let startHour = new Date(`${date.start.toLocaleDateString()} ${hours.start}`);
-  // let endHour = new Date(`${date.end.toLocaleDateString()} ${hours.end}`);
+  // const startHour = hours.start;
+  // const endHour = hours.end;
 
   if (date.start >= startHour && date.start < endHour) {
     startInDay = true;
@@ -32,11 +32,15 @@ function convertEventToEventForPay(date, hours) {
     endInDay = true;
   }
 
-  if (startInDay && endInDay && date.end.getDate() - date.start.getDate() >= 1) {
+  if (
+    startInDay &&
+    endInDay &&
+    date.end.getDate() - date.start.getDate() >= 1
+  ) {
     isNextDay = true;
   }
 
-  return new EventForPay({ startInDay, endInDay, isNextDay});
+  return new EventForPay({ startInDay, endInDay, isNextDay });
 }
 
 module.exports = { Event, convertEventToEventForPay };

@@ -1,9 +1,12 @@
 const { Event, convertEventToEventForPay } = require("../service/Event");
 
-describe("The event starts during the day ends during the day", () => {
+describe("Test Event service", () => {
   let start;
   let end;
-  let hours = { start: "06:00:00", end: "22:00:00" };
+  let hours = {
+    start: new Date("2021-03-05T06:00:00"),
+    end: new Date("2021-03-05T22:00:00"),
+  };
 
   test("The event starts during the day ends during the day", () => {
     start = new Date("2021-03-05T07:00:00");
