@@ -14,6 +14,7 @@ describe("The event starts during the day ends during the day", () => {
 
     expect(eventForPay.startInDay).toBe(true);
     expect(eventForPay.endInDay).toBe(true);
+    expect(eventForPay.isNextDay).toBe(false);
   });
 
   test("The event starts during the night ends during the night", () => {
@@ -25,6 +26,7 @@ describe("The event starts during the day ends during the day", () => {
 
     expect(eventForPay.startInDay).toBe(false);
     expect(eventForPay.endInDay).toBe(false);
+    expect(eventForPay.isNextDay).toBe(false);
   });
 
   test("the event starts day ends during the night", () => {
@@ -36,6 +38,7 @@ describe("The event starts during the day ends during the day", () => {
 
     expect(eventForPay.startInDay).toBe(true);
     expect(eventForPay.endInDay).toBe(false);
+    expect(eventForPay.isNextDay).toBe(false);
   });
 
   test("the event starts during the night ends during the day", () => {
@@ -47,6 +50,7 @@ describe("The event starts during the day ends during the day", () => {
 
     expect(eventForPay.startInDay).toBe(false);
     expect(eventForPay.endInDay).toBe(true);
+    expect(eventForPay.isNextDay).toBe(false);
   });
 
   test("the event starts during the day, continues during the night and ends during the day", () => {
@@ -58,5 +62,6 @@ describe("The event starts during the day ends during the day", () => {
 
     expect(eventForPay.startInDay).toBe(true);
     expect(eventForPay.endInDay).toBe(true);
+    expect(eventForPay.isNextDay).toBe(true);
   });
 });
