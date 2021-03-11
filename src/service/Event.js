@@ -1,3 +1,4 @@
+// We should return an array of events, not a single event for pay. 
 const EventForPay = require("./EventForPay");
 class Event {
   constructor(start, end) {
